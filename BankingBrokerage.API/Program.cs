@@ -1,5 +1,6 @@
 using BankingBrokerage.API.Data;
 using BankingBrokerage.API.Repositories;
+using BankingBrokerage.API.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,10 @@ builder.Services.AddDbContext<BankingBrokerageDbContext>(options =>
 // Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IBankRepository, BankRepository>();
+
+// Services
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IBankService, BankService>();
 
 var app = builder.Build();
 
