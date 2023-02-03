@@ -3,6 +3,7 @@ using BankingBrokerage.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankingBrokerage.API.Migrations
 {
     [DbContext(typeof(BankingBrokerageDbContext))]
-    partial class BankingBrokerageDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230203110128_AddBanksDbContext")]
+    partial class AddBanksDbContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
