@@ -45,6 +45,17 @@ namespace BankingBrokerage.API.Controllers
             return Ok(bankDTO);
         }
 
+        [HttpGet]
+        [Route("user/{id:int}")]
+        public async Task<IActionResult> GetGetAllBanksByUserIdAsync(int id)
+        {
+            var banks = await _bankService.GetAllBanksByUserIdAsync(id);
+
+            var banksDTO = mapper.Map<List<Models.DTO.Bank>>(banks);
+
+            return Ok(banksDTO);
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddBankAsync([FromBody] Models.DTO.AddBankRequest addBankRequest)
         {
