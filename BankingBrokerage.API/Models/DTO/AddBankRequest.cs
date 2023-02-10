@@ -9,7 +9,7 @@
         public int UserId { get; set; }
         public string AccountOwnerName { get; set; }
         public string Status { get; set; }
-        public bool PrimaryBank { get; set; }
+        public bool PrimaryBank { get; set; } = false;
         public string NickName { get; set; }
         public string? AuthenticationMethod { get; set; }
         public string? TransactionType { get; set; }
