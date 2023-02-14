@@ -19,6 +19,7 @@ namespace BankingBrokerage.API.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAllBanksAsync()
         {
             var banks = await _bankService.GetAllBanksAsync();
@@ -31,6 +32,8 @@ namespace BankingBrokerage.API.Controllers
         [HttpGet]
         [Route("{id:int}")]
         [ActionName("GetBankAsync")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetBankAsync([FromRoute] int id)
         {
             var bank = await _bankService.GetBankAsync(id);
@@ -47,6 +50,7 @@ namespace BankingBrokerage.API.Controllers
 
         [HttpGet]
         [Route("user/{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetGetAllBanksByUserIdAsync(int id)
         {
             var banks = await _bankService.GetAllBanksByUserIdAsync(id);
@@ -57,6 +61,7 @@ namespace BankingBrokerage.API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> AddBankAsync([FromBody] Models.DTO.AddBankRequest addBankRequest)
         {
             var bank = mapper.Map<Models.Domain.Bank>(addBankRequest);
@@ -70,6 +75,8 @@ namespace BankingBrokerage.API.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteUserAsync(int id)
         {
             var bank = await _bankService.DeleteBankAsync(id);
@@ -86,6 +93,8 @@ namespace BankingBrokerage.API.Controllers
 
         [HttpPut]
         [Route("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateUserAsync(
             [FromRoute] int id,
             [FromBody] Models.DTO.UpdateBankRequest updateBankRequest)

@@ -19,6 +19,7 @@ namespace BankingBrokerage.API.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAllUsersAsync()
         {
             var users = await _userService.GetAllUsersAsync();
@@ -31,6 +32,8 @@ namespace BankingBrokerage.API.Controllers
         [HttpGet]
         [Route("{id:int}")]
         [ActionName("GetUserAsync")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetUserAsync([FromRoute] int id)
         {
             var user = await _userService.GetUserAsync(id);
@@ -46,6 +49,7 @@ namespace BankingBrokerage.API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> AddUserAsync([FromBody] Models.DTO.AddUserRequest addUserRequest)
         {
             var user = mapper.Map<Models.Domain.User>(addUserRequest);
@@ -59,6 +63,8 @@ namespace BankingBrokerage.API.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteUserAsync(int id)
         {
             var user = await _userService.DeleteUserAsync(id);
@@ -76,6 +82,7 @@ namespace BankingBrokerage.API.Controllers
 
         [HttpPut]
         [Route("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> UpdateUserAsync(
             [FromRoute] int id, 
             [FromBody] Models.DTO.UpdateUserRequest updateUserRequest)
