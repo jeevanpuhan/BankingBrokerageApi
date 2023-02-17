@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingBrokerage.API", "BankingBrokerage.API\BankingBrokerage.API.csproj", "{11807027-DF3D-41C6-997A-72DA28637B4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingBrokerage.API", "BankingBrokerage.API\BankingBrokerage.API.csproj", "{11807027-DF3D-41C6-997A-72DA28637B4E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking_Brokerage_Application_Test_Project", "Banking_Brokerage_Application_Test_Project\Banking_Brokerage_Application_Test_Project.csproj", "{A04D5F77-49C5-4E79-8497-51A7CEC9651D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{11807027-DF3D-41C6-997A-72DA28637B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11807027-DF3D-41C6-997A-72DA28637B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11807027-DF3D-41C6-997A-72DA28637B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A04D5F77-49C5-4E79-8497-51A7CEC9651D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04D5F77-49C5-4E79-8497-51A7CEC9651D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04D5F77-49C5-4E79-8497-51A7CEC9651D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04D5F77-49C5-4E79-8497-51A7CEC9651D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
